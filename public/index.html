@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Universitet Tədbirlər Sistemi</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Universitet Tədbirləri və Qeydiyyat Sistemi</h1>
+  </header>
+
+  <main class="container">
+    <!-- İdarəetmə Paneli (Statistika) -->
+    <section class="dashboard">
+      <h2>İdarəetmə Paneli (Statistika)</h2>
+      <div class="stats-cards">
+        <div class="card">Ümumi Tədbirlər: <span id="stat-total-events">0</span></div>
+        <div class="card">Ümumi Qeydiyyatlar: <span id="stat-total-regs">0</span></div>
+      </div>
+    </section>
+
+    <!-- Axtarış və Filtr -->
+    <section class="search-section">
+      <h3>Tədbir Axtarışı</h3>
+      <input type="text" id="search-input" placeholder="Tədbir adı...">
+      <select id="category-filter">
+        <option value="">Bütün Kateqoriyalar</option>
+        <option value="Konfrans">Konfrans</option>
+        <option value="Seminar">Seminar</option>
+        <option value="Təlim">Təlim</option>
+        <option value="Müsabiqə">Müsabiqə</option>
+      </select>
+      <button onclick="fetchEvents()">Axtar</button>
+    </section>
+
+    <!-- Tədbir Siyahısı -->
+    <section class="events-section">
+      <h3>Tədbirlərin Siyahısı</h3>
+      <div id="events-list" class="events-grid"></div>
+    </section>
+
+    <!-- Qeydiyyat Modalı / Forması -->
+    <section class="form-section">
+      <h3>Tədbirə Qeydiyyat</h3>
+      <form id="registration-form">
+        <input type="hidden" id="reg-event-id">
+        <p id="selected-event-title" style="font-weight: bold;"></p>
+        <input type="text" id="reg-name" placeholder="Ad Soyad" required>
+        <input type="email" id="reg-email" placeholder="E-poçt ünvanı" required>
+        <button type="submit">Qeydiyyatı Təsdiqlə</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
